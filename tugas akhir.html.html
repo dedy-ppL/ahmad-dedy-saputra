@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="id">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Portofolio Ahmad Dedy Saputra</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f4f4f4;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+
+      .laptop {
+        width: 90%;
+        max-width: 1000px;
+        height: 600px;
+        border: 16px solid #333;
+        border-radius: 10px;
+        box-shadow: 0 0 20px rgba(0, 0, 0, 0.5);
+        position: relative;
+        overflow: hidden;
+        background: white;
+      }
+
+      .screen {
+        width: 100%;
+        height: 100%;
+        display: flex;
+        transition: transform 0.5s ease;
+      }
+
+      .slide {
+        min-width: 100%;
+        box-sizing: border-box;
+        padding: 20px;
+        background: white;
+        overflow-y: auto;
+      }
+
+      header {
+        text-align: center;
+        padding: 20px;
+        background: #007bff;
+        color: white;
+        border-radius: 8px;
+      }
+
+      h1 {
+        margin: 0;
+      }
+
+      section {
+        margin: 20px 0;
+      }
+
+      h2 {
+        color: #007bff;
+      }
+
+      ul,
+      ol {
+        margin-left: 20px;
+      }
+
+      /* Laptop base styling */
+      .laptop::before {
+        content: "";
+        position: absolute;
+        top: -40px;
+        left: 50%;
+        width: 70px;
+        height: 20px;
+        background: #333;
+        border-radius: 10px;
+        transform: translateX(-50%);
+      }
+
+      .laptop::after {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 20px;
+        background: #555;
+      }
+
+      .navigation {
+        position: absolute;
+        top: 20px;
+        right: 20px;
+        display: flex;
+        gap: 10px;
+      }
+
+      .nav-button {
+        background: #007bff;
+        color: white;
+        border: none;
+        padding: 10px 15px;
+        border-radius: 5px;
+        cursor: pointer;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="laptop">
+      <div class="screen" id="slider">
+        <div class="slide">
+          <header>
+            <h1>AHMAD DEDY SAPUTRA</h1>
+            <p>
+              RT 02, RW 04, DESA GONGSENG, KECAMATAN MEGALUH, KABUPATEN JOMBANG
+            </p>
+            <p>Tel: 088291995748 | Email: ahmaddedysaputra464@gmail.com</p>
+          </header>
+          <section class="about">
+            <h2>Tentang Saya</h2>
+            <p>
+              Saya Ahmad Dedy Saputra, Lulus dari SMAN 2 CIBARUSAH pada jurusan
+              IPA di tahun 2022. Aktivitas terakhir saat ini aktif sebagai
+              pencari kerja dan selama SMA menguasai ilmu Matematika dasar
+              seperti menentukan jumlah keuntungan dan total kerugian dari
+              penjualan. Saya memiliki minat berkarir sebagai operator produksi
+              dan mahir dalam bidang berhitung.
+            </p>
+          </section>
+        </div>
+        <div class="slide">
+          <section class="education">
+            <h2>Pendidikan</h2>
+            <h3>SMAN 2 Cibarusah (2019-2022)</h3>
+            <ul>
+              <li>Ketua sekbid ROHANI di OSIS 2019/2021</li>
+              <li>Sekretaris di eskul pramuka 2019/2020</li>
+              <li>Wakil ketua di eskul ROHIS 2019/2022</li>
+              <li>
+                Membuat KARYA TULIS ILMIAH dengan judul "PENGARUH MEDIA SOSIAL
+                TERHADAP PROSES PEMBELAJARAN DI MASA PANDEMI"
+              </li>
+            </ul>
+          </section>
+        </div>
+        <div class="slide">
+          <section class="experience">
+            <h2>Aktivitas & Project Terakhir</h2>
+            <h3>Helper Produksi Furniture - Karya Sinar Mandiri (UMKM)</h3>
+            <p>Agustus 2022 - Juli 2023</p>
+            <ol>
+              <li>
+                Melakukan pemeriksaan dan pemeliharaan perlengkapan alat dan
+                bahan yang akan digunakan untuk produksi furniture.
+              </li>
+              <li>
+                Membantu dalam proses pemotongan lembaran HPL dan triplek.
+              </li>
+              <li>
+                Membantu menyambung dan merekatkan rangka furniture, serta
+                membantu dalam proses finishing.
+              </li>
+              <li>
+                Ikut serta dalam proses pemasangan furniture di tempat konsumen.
+              </li>
+            </ol>
+          </section>
+        </div>
+        <div class="slide">
+          <section class="skills">
+            <h2>Kemampuan dan Kompetensi</h2>
+            <ul>
+              <li>Microsoft Office</li>
+              <li>Manajemen Data</li>
+              <li>Mampu bekerja sama dalam tim</li>
+              <li>Memiliki komunikasi yang baik</li>
+            </ul>
+          </section>
+        </div>
+        <div class="slide">
+          <section class="references">
+            <h2>Referensi Kontak</h2>
+            <p>Pak. Muhd Nasrul, Owner Karya Sinar Mandiri (UMKM)</p>
+            <p>Tel: 081317151352</p>
+          </section>
+        </div>
+      </div>
+
+      <div class="navigation">
+        <button class="nav-button" onclick="prevSlide()">
+          &#10094; Sebelumnya
+        </button>
+        <button class="nav-button" onclick="nextSlide()">
+          Berikutnya &#10095;
+        </button>
+      </div>
+    </div>
+
+    <script>
+      let currentSlide = 0;
+      const slides = document.querySelectorAll(".slide");
+
+      function showSlide(index) {
+        const slider = document.getElementById("slider");
+        slider.style.transform = "translateX(" + -index * 100 + "%)";
+      }
+
+      function nextSlide() {
+        currentSlide = (currentSlide + 1) % slides.length;
+        showSlide(currentSlide);
+      }
+
+      function prevSlide() {
+        currentSlide = (currentSlide - 1 + slides.length) % slides.length;
+        showSlide(currentSlide);
+      }
+    </script>
+  </body>
+</html>
